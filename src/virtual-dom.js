@@ -205,6 +205,7 @@ function collectChild(child, children) {
 
 function diffVchildren(patches, vnode, newVnode, node, parentContext) {
     let { childNodes, vchildren } = node
+    if (!vchildren) return
     let newVchildren = node.vchildren = getFlattenChildren(newVnode)
     let vchildrenLen = vchildren.length
     let newVchildrenLen = newVchildren.length

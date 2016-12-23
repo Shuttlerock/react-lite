@@ -230,6 +230,7 @@
       var childNodes = node.childNodes;
       var vchildren = node.vchildren;
 
+      if (!vchildren) return;
       var newVchildren = node.vchildren = getFlattenChildren(newVnode);
       var vchildrenLen = vchildren.length;
       var newVchildrenLen = newVchildren.length;
