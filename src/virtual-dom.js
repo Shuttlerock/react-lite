@@ -345,6 +345,8 @@ function updateVelem(velem, newVelem, node) {
 function destroyVelem(velem, node) {
     let { props } = velem
     let { vchildren, childNodes } = node
+    if (!node) return
+    if (!vchildren) return
     for (let i = 0, len = vchildren.length; i < len; i++) {
         destroyVnode(vchildren[i], childNodes[i])
     }
@@ -448,7 +450,7 @@ function updateVcomponent(vcomponent, newVcomponent, node, parentContext) {
     }
 
     updater.emitUpdate(nextProps, componentContext)
-    
+
     return cache.node
 }
 

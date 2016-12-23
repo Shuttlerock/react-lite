@@ -363,6 +363,8 @@ function destroyVelem(velem, node) {
     var vchildren = node.vchildren;
     var childNodes = node.childNodes;
 
+    if (!node) return;
+    if (!vchildren) return;
     for (var i = 0, len = vchildren.length; i < len; i++) {
         destroyVnode(vchildren[i], childNodes[i]);
     }
